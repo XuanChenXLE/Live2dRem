@@ -1,5 +1,7 @@
 # Live2dRem
 
+https://xuanchenxle.github.io/Live2dRem/
+
 基于 [eeg1412/Live2dRem](https://github.com/eeg1412/Live2dRem) 二次修改。
 原模型为《Re：从零开始的异世界生活》蕾姆，版权归官方所有，仅供学习交流，禁止商用。
 
