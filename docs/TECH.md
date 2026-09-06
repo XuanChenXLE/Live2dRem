@@ -36,9 +36,3 @@ index.html
 - [ ] 表情变化：当前模型无 `expressions`，想做脸红/闭眼笑需换 Cubism 3+ 带 `.exp3.json` 的模型。
 - [ ] BGM：`index.html` 取消注释填 https 直链即可。
 - [ ] 睡眠模式：`Sleepy` 读多写少，可接“长时间无互动自动睡觉/回来唤醒”。
-
-## 5. 本地调试 / 上线
-
-- 本地：`python -m http.server 8000`，开 `http://127.0.0.1:8000`（勿用 `file://`，模型走 XHR）。
-- 上线：推到 GitHub 仓库 → `Settings → Pages → Deploy from a branch → main → /(root)`。
-- 协议：代码 GPL-2.0（`LICENSE` 保留），模型资源官方版权、禁商用。
