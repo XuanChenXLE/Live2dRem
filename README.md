@@ -24,6 +24,7 @@ live2d/js/live2d.js   # Live2D Cubism 2 渲染（原样保留）
 live2d/js/message.js  # 交互逻辑（本版主要修改）
 live2d/message.json   # 悬停 / 点击文案
 live2d/model/rem/     # 蕾姆模型（.moc + 35 个 .mtn 动作）
+extension/            # Chrome 扩展（任意网页 summon 蕾姆，iframe 隔离）
 ```
 
 ## 本地运行
@@ -100,3 +101,19 @@ var freeChatConfig = {};   // 各家 key 按需填，见 index.html 注释
 ## 技术文档
 
 实现原理、文件分工、待办见 [docs/TECH.md](docs/TECH.md)。
+
+## Chrome 扩展（任意网页 summon 蕾姆）
+
+`extension/` 即源码，无需编译：`chrome://extensions` → 开发者模式 → 加载已解压的扩展程序 → 选 `extension/` 文件夹。
+
+行为：默认右下角小窗（非全屏），拖身体全屏可走、位置跨站记忆；点工具栏图标可开关蕾姆（关掉即移除，已开页面实时生效），另有“复位到右下角”按钮。
+
+主站改了话术/模型后，两步生效（缺一不可，Chrome 不会自动重载未打包扩展）：
+
+1. 同步文件到插件目录（`content.js / config.js / rem.html / manifest.json` 是插件独有，原地改，不用同步）：
+```
+powershell -ExecutionPolicy Bypass -File extension\sync.ps1
+```
+2. `chrome://extensions` 点本插件的刷新按钮，再回页面验证。
+
+发给别人：把 `extension/` 里面的文件打包成 ZIP 即可，对方解压后同样加载。
