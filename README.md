@@ -36,17 +36,6 @@ python -m http.server 8000
 
 浏览器开 `http://127.0.0.1:8000`。
 
-## 部署到 GitHub Pages
-
-1. 新建仓库 `Live2dRem`（不勾 README），把本目录推上去：
-```
-git remote add origin https://github.com/<你>/Live2dRem.git
-git branch -M main
-git push -u origin main
-```
-2. `Settings → Pages → Deploy from a branch → main → /(root) → Save`
-3. 等 1~2 分钟，访问 `https://<你>.github.io/Live2dRem/`
-
 ## 聊天配置（`index.html`）
 
 ```js
